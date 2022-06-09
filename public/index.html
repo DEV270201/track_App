@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme : {
+          screens: {
+            xs: "270px",
+            sm: "640px",
+            md: "768px",
+            lg: "1024px",
+            xl: "1280px",
+            xxl: "1536px",
+          },
+          colors: {
+            transparent: "transparent",
+      
+            white: "#FFFFFF",
+            black: "#000000",
+      
+            light: {
+              100: "#ffffff",
+              200: "#E6E6F2",
+              300: "#B8B8CC",
+              400: "#9898B3",
+              500: "#3A3A4D",
+              600: "#262633",
+              700: "#1D1D26",
+              800: "#14141A",
+            },
+      
+            dark: {
+              100: "#14141A",
+              200: "#1D1D26",
+              300: "#262633",
+              400: "#3A3A4D",
+              500: "#9898B3",
+              600: "#B8B8CC",
+              700: "#E6E6F2",
+              800: "#ffffff",
+            },
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
