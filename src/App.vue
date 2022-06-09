@@ -1,8 +1,10 @@
 <template>
 <div class="h-screen flex justify-center items-center">
   <div class="xs:w-3/4 lg:w-5/12 h-auto border-2 border-stone-800 rounded">
-    <MyHeader />
-    <AddTask @addNewTask="addNewTask"/>
+    <MyHeader @toggle="toggle" :isOpen="isOpen"/>
+    <div v-if="isOpen">
+      <AddTask @addNewTask="addNewTask"/>
+    </div>
     <MyTasks :tasks="tasks" @delete_task="deleteMyTask"/>
   </div>
 </div>
@@ -22,7 +24,8 @@ export default {
 },
   data(){
     return{
-      tasks : []
+      tasks : [],
+      isOpen : false
     }
   },
   created(){
@@ -57,6 +60,9 @@ export default {
     },
     addNewTask(task){
       this.tasks = [...this.tasks,task];
+    },
+    toggle(){
+      this.isOpen = !this.isOpen;
     }
   }
 }
