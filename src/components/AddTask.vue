@@ -34,15 +34,24 @@ export default {
             date: ''
         }
     },
+    props : {
+      addNewTask : {
+          type : Function
+      },
+      showNotification : {
+          type : Function
+      }
+    },
     methods: {
         saveTask() {
             if(this.task.trim() === ''){
-                alert("please enter the task properly");
+                console.log("hello");
+                this.$emit("showNotification","Please enter the task properly",true);
                 return;
             }
             console.log(typeof(this.date))
             if(!this.date){
-                alert("please enter the date properly");
+                this.$emit("showNotification","Please enter the date properly",true);
                 return;
             }
             const newTask = {
